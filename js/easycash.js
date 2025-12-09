@@ -8,17 +8,16 @@ function getUser() {
 export function consultarSaldo() {
     const user = getUser();
     return user.saldo;
-} 
-export function encontrarConta(cpf){
+}
+export function encontrarConta(cpf) {
     return db.find(conta => conta.cpf === cpf)
 }
 
 export function depositar(valor) {
     const user = getUser();
-    const valorNumerico = Number(valor);
-    const novoSaldo = user.saldo + valorNumerico;
-    db = atualizarSaldoNodb(user.cpf, novoSaldo)
-    return encontrarConta(user.cpf).saldo
+    valor = Number(valor);
+    user.saldo += valor;
+    return user.saldo
 }
 
 export function sacar(valor) {
@@ -26,12 +25,14 @@ export function sacar(valor) {
     const digitoUnidade = valor % 10
     const user = getUser();
 
-    if(valor < 10){
-        return {erro: "Valor menor á R$10 no é permitido"}
-    }else if (valor > user.saldo) {
+    if (valor < 2) {
+        return { erro: "Valor menor á R$2 no é permitido" }
+    } else if (valor > user.saldo) {
         return { erro: "Saldo insuficiente!" };
-    }else if(digitoUnidade === 1 || digitoUnidade === 3) {
-        return {erro : `Saque de R$${valor} não é permitido, sugestão sacar R$${valor + 1} ou R$${valor -1}`}
+    } else if (digitoUnidade === 1 || digitoUnidade === 3) {
+        return { erro: `Saque de R$${valor} não é permitido, sugestão sacar R$${valor + 1} ou R$${valor - 1}` }
+    } else if (valor > 10000) {
+        return { erro: "Valor não permitido!" }
     }
 
     user.saldo -= valor;
@@ -55,5 +56,3 @@ function separarNotas(valor) {
     }
     return resultado;
 }
-
-

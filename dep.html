@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/easycash.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/easycash.css" />
     <title>Depósito</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-    <h1>Depósito</h1>
-    <input type="number" id="valor" placeholder="Valor do depósito">
-    <button id="btnDep">Depositar</button>
-    <p id="resultado"></p>
-    <a href="easycash.html">Voltar</a>
-    <script type="module">
+      <h1>Depósito</h1>
+      <input type="number" id="valor" placeholder="Valor do depósito" />
+      <button id="btnDep">Depositar</button>
+      <p id="resultado"></p>
+      <a href="easycash.html">Voltar</a>
+      <script type="module">
         import { depositar } from "./js/easycash.js";
         document.getElementById("btnDep").addEventListener("click", () => {
-            const v = document.getElementById("valor").value;
-            if (v <= 0) {
-                document.getElementById("resultado").textContent =
-                    "Valor inválido!";
-                return;
-            }
-            const novoSaldo = depositar(v);
+          const v = document.getElementById("valor").value;
+          if (v <= 0) {
             document.getElementById("resultado").textContent =
-                "Depósito realizado! Novo saldo: R$ " + novoSaldo;
+              "Valor inválido!";
+            return;
+          }
+          const novoSaldo = depositar(v);
+          document.getElementById("resultado").textContent =
+            "Depósito realizado! Novo saldo: R$ " + novoSaldo;
         });
-    </script>
-
+      </script>
     </div>
-</body>
+  </body>
 </html>
