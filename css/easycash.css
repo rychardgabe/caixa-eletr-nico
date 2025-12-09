@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #7F00FF;
+    color: #333;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: lightgreen;
+    background-color: #007bff;
+    margin: 0 5px;
+    margin-bottom: 10px;
+}
+
+.nav-pills .nav-link {
+    border-radius: .25rem;
+}
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+user agent stylesheet
+li {
+    text-align: -webkit-match-parent;
+}
+.nav {
+    display: -ms-flexbox;
+    display: flex
+;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 650px;
+    padding-top: 50px;
+    list-style: none;
+}
+user agent stylesheet
+ul {
+    list-style-type: disc;
+}
+
+h1{
+    text-align: center;
+    color: chartreuse;
+    padding-top: 40px;
+}
+p{
+    text-align: center;
+    color: yellowgreen;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.container {
+    padding-top: 225px;
+    text-align: center;
+}
+
+button {
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #00ff00; /* Verde neon */
+    font-weight: bold;
+}
+
+p {
+    color: #00ffcc; /* Azul claro */
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #00aaff; /* Azul ciano */
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0088cc; /* Azul mais escuro */
+}

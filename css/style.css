@@ -1,0 +1,17 @@
+body {
+    background-color: #7F00FF
+}
+
+h1 { 
+    color: chartreuse;
+    padding-top: 225px;
+    text-align: center;
+    font-size: 50px;
+}
+
+p {
+    color: lightgreen;
+    padding-top: 5px;
+    text-align: center; 
+    font-size: 40px;  
+}

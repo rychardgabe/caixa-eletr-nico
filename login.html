@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>EasyCash</title>
+</head>
+<body>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content login-card">
+
+                <h1 class="login-title">EasyCash</h1>
+                <p class="login-subtitle">Faça login usando CPF e senha</p>
+                <div class="modal-body">
+                    <input id= "cpf" type="cpf" placeholder="CPF">
+                    <input id= "pass"type="password" placeholder="Senha">
+                    <div class="remember">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Lembrar Senha</label>
+                    </div>
+                    <div class="forgot">
+                        <a href="#">Esqueceu a senha?</a>
+                    </div>
+                    <button class="btn-login" onclick = "login()">LOGIN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p id="msg"></p>
+
+    <script type="module" src="js/login.js"></script>
+</body>
+</html>

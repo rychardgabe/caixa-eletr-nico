@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/easycash.css">
+    <title>Consultar Saldo</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Consultar Saldo</h1>
+    <button id="btnSaldo">Ver Saldo</button>
+    <p id="resultado"></p>
+    <a href="easycash.html">Voltar</a>
+    <script type="module">
+        import { consultarSaldo } from "./js/easycash.js";
+        document.getElementById("btnSaldo").addEventListener("click", () => {
+            const saldo = consultarSaldo();
+            document.getElementById("resultado").textContent =
+                "Seu saldo atual é: R$ " + saldo;
+        });
+
+    </script>
+    </div>
+</body>
+</html>

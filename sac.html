@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/easycash.css">
+    <title>Saque</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Saque</h1>
+    <input type="number" id="valor" placeholder="Valor do saque">
+    <button id="btnSacar">Sacar</button>
+    <p id="resultado"></p>
+    <a href="easycash.html">Voltar</a>
+    <script type="module">
+        import { sacar } from "./js/easycash.js";
+        document.getElementById("btnSacar").addEventListener("click", () => {
+            const valor = Number(document.getElementById("valor").value);
+            if (valor <= 0) {
+                document.getElementById("resultado").textContent =
+                    "Valor inválido!";
+                return;
+            }
+            const resp = sacar(valor);
+            if (resp.erro) {
+                document.getElementById("resultado").textContent = resp.erro;
+                return;
+            }
+            let texto = `Saque realizado!<br><br>Notas entregues:<br>`;
+            for (const nota in resp.notas) {
+                texto += `R$${nota}: ${resp.notas[nota]}x<br>`;
+            }
+            document.getElementById("resultado").innerHTML = texto;
+        });
+    </script>
+    
+    </div>
+</body>
+</html>
